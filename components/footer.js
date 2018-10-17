@@ -1,4 +1,4 @@
-const Footer = () => (
+const Footer = props => (
   <footer class="pv4 ph3 ph5-m ph6-l mid-gray bg-light-gray">
 
     <p class="f3 firasans fw4 mw7 tc center">
@@ -38,6 +38,8 @@ const Footer = () => (
             <a class="no-underline underline-hover" href="https://fontawesome.com">Font Awesome</a>
         </p>
     </small>
+
+    { props.children }
 
   </footer>
 )

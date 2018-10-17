@@ -10,7 +10,7 @@ module.exports = {
   exportPathMap: function () {
     return {
       '/': { page: '/' },
-      '/objects': { page: '/objects' }
+      '/objects': { page: '/objects' }      
     }
   }
 }

@@ -1,5 +1,4 @@
 import React from 'react';
-import Link from 'next/link';
 import Head from '../components/head';
 import HomeSection from '../components/home-section';
 import Footer from '../components/footer';
@@ -29,7 +28,7 @@ const sections = [
 ]
 
 var breakpoint = 480;
-var lastWidth;;
+var lastWidth;
 var body;
 var rows;
 
