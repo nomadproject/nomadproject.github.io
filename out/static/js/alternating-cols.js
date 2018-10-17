@@ -57,5 +57,8 @@ document.addEventListener('DOMContentLoaded', function (event) {
         lastWidth = window.innerWidth;
     }, true);
 
-    alternatingCols();
+    setTimeout(() => {
+        alternatingCols();
+    }, 1);
+    
 });
