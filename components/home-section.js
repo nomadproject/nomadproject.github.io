@@ -23,7 +23,7 @@ const HomeSection = props => (
             </div>
             <div class="right fl-ns center w-third-ns tl relative">
                 <h2 class="absolute f3 fw4 firasans green bg-white pa2" style={{ left: '-30%' }}>{props.title}</h2>
-                <p class="pt5 lato lh-copy f4">{props.text}</p>
+                <p class="pt5 lato lh-copy f4" dangerouslySetInnerHTML={{ __html: props.text }}></p>
                 <SectionLink link={props.link} text={props.linktext} />
             </div>
         </article>
