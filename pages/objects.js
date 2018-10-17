@@ -1,7 +1,7 @@
-import React from 'react'
-import Link from 'next/link'
-import Head from '../components/head'
-import Footer from '../components/footer'
+import React from 'react';
+import Link from 'next/link';
+import Head from '../components/head';
+import Footer from '../components/footer';
 
 const Objects = () => (
   <div>
@@ -39,4 +39,4 @@ const Objects = () => (
   </div>
 )
 
-export default Objects
+export default Objects;
