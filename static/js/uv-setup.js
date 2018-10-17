@@ -27,7 +27,7 @@ window.addEventListener('uvLoaded', function (e) {
     $uv = $('#uv');
 
     urlDataProvider = new UV.URLDataProvider();
-    console.log('test');
+
     var data = {
         root: '../static/uv',
         iiifResourceUri: manifest,

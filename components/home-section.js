@@ -3,12 +3,12 @@ function SectionLink(props) {
         return (
             <p>
                 <a href={props.link} class="f5 no-underline green bg-animate hover-bg-green hover-white inline-flex items-center pa3 ba border-box">
-                        <span class="pr1 f4">{props.text}</span>
-                        <svg class="w1" data-icon="chevronRight" viewBox="0 0 32 32" fill="currentcolor">
-                            <title>chevronRight icon</title>
-                            <path d="M12 1 L26 16 L12 31 L8 27 L18 16 L8 5 z"></path>
-                        </svg>
-                    </a>
+                    <span class="pr1 f4">{props.text}</span>
+                    <svg class="w1" data-icon="chevronRight" viewBox="0 0 32 32" fill="currentcolor">
+                        <title>chevronRight icon</title>
+                        <path d="M12 1 L26 16 L12 31 L8 27 L18 16 L8 5 z"></path>
+                    </svg>
+                </a>
             </p>
         )
     }
