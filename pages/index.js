@@ -4,85 +4,82 @@ import HomeSection from '../components/home-section';
 import Footer from '../components/footer';
 import { Component } from "react";
 
-const data = {
-    
-    "intro": {
-        "title": "A collaborative project by <a class='mid-gray no-underline underline-hover' href='https://twitter.com/abirahussein?lang=en'>Abira Hussein</a> and <a class='no-underline underline-hover' href='https://mnemoscene.io'>Mnemoscene</a>",
-        "text": "Nomad is a <a class='orange no-underline underline-hover' href='#mixed-reality'>mixed reality</a> experience premiering at the Somali Week Festival 2018. Alongside <a class='blue no-underline underline-hover' href='#workshops'>workshops</a> engaging Somali communities in London, Nomad explores the creative use of immersive and web-based technology to contextualise archival Somali <a class='green no-underline underline-hover' href='#objects'>objects</a> with the people and traditions to which they belong."
-    },
-    "sections": [
-        {
-            "id": "mixed-reality",
-            "img": "/static/img/hololens-1.jpg",
-            "title": "Mixed Reality",
-            "text": "Nomad is a Mixed Reality experience for the Microsoft HoloLens developed by <a class='no-underline underline-hover' href='https://mnemoscene.io'>Mnemoscene.</a> The experience layers sound recordings from the British Library, digitised objects and photographs from the British Museum and Powell-Cotton Museum, and people presented as 3D holograms into the user’s real-life environment."
-        },
-        {
-            "id": "workshops",
-            "img": "/static/img/workshops.jpg",
-            "title": "Workshops",
-            "text": "This project aims to gather and share the heritage of Somali communities in London with the public. Workshops invite participants to record their own stories and create 3D models of objects from their personal collections using photogrammetry."
-        },
-        {
-            "id": "objects",
-            "img": "/static/img/object.jpg",
-            "title": "Objects",
-            "text": "A collection of 3D objects, photographs and audio recordings from the British Museum and Nomad workshops.",
-            "link": "/objects/index.html",
-            "linktext": "view objects"
-        }
-    ]
-}
-
-var breakpoint = 480;
-var lastWidth;
-var body;
-var rows;
-
-function alternatingCols() {
-
-    // if small, add a mobile class to body
-    if (isSmall()) {
-        body.classList.add('mobile');
-    } else {
-        body.classList.remove('mobile');
-    }
-
-    // for each odd row, if the screen is large, reverse the columns
-    Array.prototype.slice.call(rows).forEach(function (row, index) {
-
-        if (!(index % 2 === 0)) { // odd row
-
-            var parent = row.querySelector('article');
-            var firstCol = parent.querySelector('div');
-
-            if (!isSmall()) {
-
-                if (firstCol.classList.contains('left')) {
-                    parent.appendChild(parent.firstElementChild);
-                    parent.classList.add('switched');
-                }
-
-            } else {
-
-                if (firstCol.classList.contains('right')) {
-                    parent.appendChild(parent.firstElementChild);
-                    parent.classList.remove('switched');
-                }
-
-            }
-        }
-    });
-}
-
-function isSmall() {
-    return window.innerWidth < breakpoint;
-}
+const breakpoint = 480;
+let lastWidth;
+let body;
+let rows;
 
 export default class Home extends Component {
 
     constructor(props) {
         super(props);
+    }
+
+    static async getInitialProps() {
+        return {
+            "intro": {
+                "title": "A collaborative project by <a class='mid-gray no-underline underline-hover' href='https://twitter.com/abirahussein?lang=en'>Abira Hussein</a> and <a class='no-underline underline-hover' href='https://mnemoscene.io'>Mnemoscene</a>",
+                "text": "Nomad is a <a class='orange no-underline underline-hover' href='#mixed-reality'>mixed reality</a> experience premiering at the Somali Week Festival 2018. Alongside <a class='blue no-underline underline-hover' href='#workshops'>workshops</a> engaging Somali communities in London, Nomad explores the creative use of immersive and web-based technology to contextualise archival Somali <a class='green no-underline underline-hover' href='#objects'>objects</a> with the people and traditions to which they belong."
+            },
+            "sections": [
+                {
+                    "id": "mixed-reality",
+                    "img": "/static/img/hololens-1.jpg",
+                    "title": "Mixed Reality",
+                    "text": "Nomad is a Mixed Reality experience for the Microsoft HoloLens developed by <a class='no-underline underline-hover' href='https://mnemoscene.io'>Mnemoscene.</a> The experience layers sound recordings from the British Library, digitised objects and photographs from the British Museum and Powell-Cotton Museum, and people presented as 3D holograms into the user’s real-life environment."
+                },
+                {
+                    "id": "workshops",
+                    "img": "/static/img/workshops.jpg",
+                    "title": "Workshops",
+                    "text": "This project aims to gather and share the heritage of Somali communities in London with the public. Workshops invite participants to record their own stories and create 3D models of objects from their personal collections using photogrammetry."
+                },
+                {
+                    "id": "objects",
+                    "img": "/static/img/object.jpg",
+                    "title": "Objects",
+                    "text": "A collection of 3D objects, photographs and audio recordings from the British Museum and Nomad workshops.",
+                    "link": "/objects/index.html",
+                    "linktext": "view objects"
+                }
+            ]
+        }
+    }
+
+    alternatingCols() {
+
+        // if small, add a mobile class to body
+        if (window.innerWidth < breakpoint) {
+            body.classList.add('mobile');
+        } else {
+            body.classList.remove('mobile');
+        }
+    
+        // for each odd row, if the screen is large, reverse the columns
+        Array.prototype.slice.call(rows).forEach(function (row, index) {
+    
+            if (!(index % 2 === 0)) { // odd row
+    
+                const parent = row.querySelector('article');
+                const firstCol = parent.querySelector('div');
+    
+                if (!(window.innerWidth < breakpoint)) {
+
+                    if (firstCol.classList.contains('left')) {
+                        parent.appendChild(parent.firstElementChild);
+                        parent.classList.add('switched');
+                    }
+    
+                } else {
+    
+                    if (firstCol.classList.contains('right')) {
+                        parent.appendChild(parent.firstElementChild);
+                        parent.classList.remove('switched');
+                    }
+    
+                }
+            }
+        });
     }
 
     componentDidMount() {
@@ -91,17 +88,20 @@ export default class Home extends Component {
         body = document.querySelector('body');
         rows = this.sectionContainer.querySelectorAll('section');
 
+        const that = this;
+
         window.addEventListener('resize', function () {
-            if (isSmall() && lastWidth > breakpoint) {
-                alternatingCols();
+            // if small and the lastwidth is greater than the breakpoint
+            if ((window.innerWidth < breakpoint) && lastWidth > breakpoint) {
+                that.alternatingCols();
             } else if (lastWidth < breakpoint) {
-                alternatingCols();
+                that.alternatingCols();
             }
 
             lastWidth = window.innerWidth;
         }, true);
 
-        alternatingCols();
+        this.alternatingCols();
     }
 
     render() {
@@ -113,8 +113,8 @@ export default class Home extends Component {
                     <div class="dtc v-mid tc ph4 pv4">
                         <h1 class="mt2 mb0 firasans fw6 f2 f1-ns">Nomad</h1>
                         <div class="f5 f3-ns">
-                            <p class="fw6 lh-copy mw8 center firasans" dangerouslySetInnerHTML={{ __html: data.intro.title }}></p>
-                            <p class="lh-copy mw8 center firasans" dangerouslySetInnerHTML={{ __html: data.intro.text }}></p>
+                            <p class="fw6 lh-copy mw8 center firasans" dangerouslySetInnerHTML={{ __html: this.props.intro.title }}></p>
+                            <p class="lh-copy mw8 center firasans" dangerouslySetInnerHTML={{ __html: this.props.intro.text }}></p>
                         </div>
                         <div class="cf mw7 center">
                             <a class="link dim gray dib h2 w2 br-100 mr3 " href="https://twitter.com/hashtag/nomadproject?src=hash"
@@ -141,7 +141,7 @@ export default class Home extends Component {
 
                 <main ref={ref => this.sectionContainer = ref}>
                     {
-                        data.sections.map(({ id, img, title, text, link, linktext }) => (
+                        this.props.sections.map(({ id, img, title, text, link, linktext }) => (
                             <HomeSection id={id} img={img} title={title} text={text} link={link} linktext={linktext} />
                         ))
                     }

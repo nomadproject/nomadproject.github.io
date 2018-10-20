@@ -1,17 +1,47 @@
 import React from 'react';
 import Head from '../components/head';
 import Footer from '../components/footer';
+import UV from '../components/uv';
 import { Component } from "react";
 
 export default class Objects extends Component {
 
 	constructor(props) {
-        super(props);
+		super(props);
     }
 
     componentDidMount() {
 
-    }
+		//document.addEventListener("DOMContentLoaded", function() {
+
+			const iiifGallery = document.querySelector('iiif-gallery');
+        
+			iiifGallery.addEventListener('onSelectManifest', function (evt) {
+				props.manifest = evt.detail.id;
+				this.setState(this.state);
+			});
+		
+			iiifGallery.addEventListener('onSelectCollection', function (evt) {
+				props.manifest = evt.detail.id;
+				this.setState(this.state);
+			});
+
+		//});
+		
+	}
+	
+	static async getInitialProps () {
+     	return {
+			 manifest: "https://nomad-project.co.uk/objects/collection/index.json",
+			 ignore: "https://nomad-project.co.uk/objects/collection/wooden-bowl/index.json",
+			 headerMessage: "Watch this space for more objects and stories from the Nomad workshops...",
+			 uv: {
+				root: "../static/uv",
+				configUri: "../static/uv.json",
+				manifest: ""
+			}
+		}
+	}
 
     render() {
 		return (
@@ -21,7 +51,6 @@ export default class Objects extends Component {
 					<script src="https://unpkg.com/iiif-gallery/dist/iiifgallery.js"></script>
 					<script src="/static/uv/lib/offline.js"></script>
 					<script src="/static/uv/helpers.js"></script>
-					<script src="/static/js/uv-setup.js"></script>
 				</Head>
 
 				<header class="pa3 overflow-hidden">
@@ -32,20 +61,20 @@ export default class Objects extends Component {
 						</svg>
 						<span class="pl1 f4">go back</span>
 					</a>
-					<div class="db fl pt3 lato lh-copy">Watch this space for more objects and stories from the Nomad workshops...</div>
+					<div class="db fl pt3 lato lh-copy" dangerouslySetInnerHTML={{ __html: this.props.headerMessage }}></div>
 				</header>
 
 				<main>
 
-					<div id="uv" class="uv"></div>
+					<UV root={this.props.uv.root} configUri={this.props.uv.configUri} manifest={this.props.uv.manifest} />
 
 					<iiif-gallery manifest="https://nomad-project.co.uk/objects/collection/index.json" ignore="https://nomad-project.co.uk/objects/collection/wooden-bowl/index.json"></iiif-gallery>
+					
+					{/* <iiif-gallery manifest={this.props.manifest} ignore={this.props.ignore}></iiif-gallery> */}
 
 				</main>
 
 				<Footer />
-
-				<script src="/static/uv/uv.js"></script>
 
 			</div>
 		)
