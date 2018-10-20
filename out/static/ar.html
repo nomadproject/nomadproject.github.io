@@ -24,30 +24,30 @@
         <a-assets>
             <a-asset-item id="gourd" src="https://nomad-project.co.uk/objects/collection/gourd/_gourd/gourd.gltf"></a-asset-item>
             <a-asset-item id="headrest" src="https://nomad-project.co.uk/objects/collection/headrest/_headrest/headrest.gltf"></a-asset-item>
-            <a-asset-item id="incenseburner" src="https://nomad-project.co.uk/objects/collection/incense-burner/_incense-burner/incense-burner.gltf"></a-asset-item>
+            <a-asset-item id="incense-burner" src="https://nomad-project.co.uk/objects/collection/incense-burner/_incense-burner/incense-burner.gltf"></a-asset-item>
             <a-asset-item id="wooden-bowl" src="https://nomad-project.co.uk/objects/collection/wooden-bowl/_wooden-bowl/wooden-bowl.gltf"></a-asset-item>
             <a-asset-item id="gourd-sound" src="/static/mp3/gourd.mp3" response-type="arraybuffer" preload="auto"></a-asset-item>
             <a-asset-item id="headrest-sound" src="/static/mp3/headrest.mp3" response-type="arraybuffer" preload="auto"></a-asset-item>
-            <a-asset-item id="incenseburner-sound" src="/static/mp3/incenseburner.mp3" response-type="arraybuffer" preload="auto"></a-asset-item>
+            <a-asset-item id="incense-burner-sound" src="/static/mp3/incense-burner.mp3" response-type="arraybuffer" preload="auto"></a-asset-item>
             <a-asset-item id="wooden-bowl-sound" src="/static/mp3/wooden-bowl.mp3" response-type="arraybuffer" preload="auto"></a-asset-item>
         </a-assets>
 
-        <a-marker type="pattern" url="custom-markers/gourd.patt">
+        <a-marker type="pattern" url="/static/ar-markers/gourd.patt">
             <a-sound src="#gourd-sound"></a-sound>
             <a-entity position="0 2 0" scale=".2 .2 .2" gltf-model="#gourd"></a-entity>
         </a-marker>
 
-        <a-marker type="pattern" url="custom-markers/headrest.patt">
+        <a-marker type="pattern" url="/static/ar-markers/headrest.patt">
             <a-sound src="#headrest-sound"></a-sound>
             <a-entity position="0 2 0" scale=".2 .2 .2" gltf-model="#headrest"></a-entity>
         </a-marker>
 
-        <a-marker type="pattern" url="custom-markers/incenseburner.patt">
-            <a-sound src="#incenseburner-sound"></a-sound>
-            <a-entity position="0 2 0" scale=".2 .2 .2" gltf-model="#incenseburner"></a-entity>
+        <a-marker type="pattern" url="/static/ar-markers/incense-burner.patt">
+            <a-sound src="#incense-burner-sound"></a-sound>
+            <a-entity position="0 2 0" scale=".2 .2 .2" gltf-model="#incense-burner"></a-entity>
         </a-marker>
 
-        <a-marker type="pattern" url="custom-markers/wooden-bowl.patt">
+        <a-marker type="pattern" url="/static/ar-markers/wooden-bowl.patt">
             <a-sound src="#wooden-bowl-sound"></a-sound>
             <a-entity position="0 2 0" scale=".2 .2 .2" gltf-model="#wooden-bowl"></a-entity>
         </a-marker>
