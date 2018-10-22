@@ -1,46 +1,47 @@
 import React from 'react';
 import Head from '../components/head';
 import Footer from '../components/footer';
-import UV from '../components/uv';
+import UV from '../components/uvcomponent';
 import { Component } from "react";
 
 export default class Objects extends Component {
 
 	constructor(props) {
 		super(props);
+		this.state = {
+				manifest: "https://nomad-project.co.uk/objects/collection/index.json",
+				ignore: "https://nomad-project.co.uk/objects/collection/wooden-bowl/index.json",
+				headerMessage: "Watch this space for more objects and stories from the Nomad workshops...",
+				uv: {
+				   root: "../static/uv",
+				   configUri: "../static/uv.json",
+				   manifest: ""
+			   }
+		   };
     }
 
-    componentDidMount() {
+	componentDidMount() {
 
-		//document.addEventListener("DOMContentLoaded", function() {
+		const that = this;
 
-			const iiifGallery = document.querySelector('iiif-gallery');
-        
-			iiifGallery.addEventListener('onSelectManifest', function (evt) {
-				props.manifest = evt.detail.id;
-				this.setState(this.state);
-			});
-		
-			iiifGallery.addEventListener('onSelectCollection', function (evt) {
-				props.manifest = evt.detail.id;
-				this.setState(this.state);
-			});
-
-		//});
-		
-	}
+		const iiifGallery = document.querySelector('iiif-gallery');
 	
-	static async getInitialProps () {
-     	return {
-			 manifest: "https://nomad-project.co.uk/objects/collection/index.json",
-			 ignore: "https://nomad-project.co.uk/objects/collection/wooden-bowl/index.json",
-			 headerMessage: "Watch this space for more objects and stories from the Nomad workshops...",
-			 uv: {
-				root: "../static/uv",
-				configUri: "../static/uv.json",
-				manifest: ""
-			}
-		}
+		iiifGallery.addEventListener('onSelectManifest', function (evt) {
+			that.setState(function(state, props) {
+				return {
+					uv: {
+						manifest: evt.detail.id
+					}
+				};
+			});
+		});
+	
+		iiifGallery.addEventListener('onSelectCollection', function (evt) {
+			console.log(evt.detail.id);
+			//props.manifest = evt.detail.id;
+			//that.setState(that.state);
+		});
+
 	}
 
     render() {
@@ -61,20 +62,20 @@ export default class Objects extends Component {
 						</svg>
 						<span class="pl1 f4">go back</span>
 					</a>
-					<div class="db fl pt3 lato lh-copy" dangerouslySetInnerHTML={{ __html: this.props.headerMessage }}></div>
+					<div class="db fl pt3 lato lh-copy" dangerouslySetInnerHTML={{ __html: this.state.headerMessage }}></div>
 				</header>
 
 				<main>
 
-					<UV root={this.props.uv.root} configUri={this.props.uv.configUri} manifest={this.props.uv.manifest} />
+					<UV root={this.state.uv.root} configUri={this.state.uv.configUri} manifest={this.state.uv.manifest} />
 
-					<iiif-gallery manifest="https://nomad-project.co.uk/objects/collection/index.json" ignore="https://nomad-project.co.uk/objects/collection/wooden-bowl/index.json"></iiif-gallery>
-					
-					{/* <iiif-gallery manifest={this.props.manifest} ignore={this.props.ignore}></iiif-gallery> */}
+					<iiif-gallery manifest={this.state.manifest} ignore={this.state.ignore}></iiif-gallery>
 
 				</main>
 
 				<Footer />
+
+				<script src="/static/uv/uv.js"></script>
 
 			</div>
 		)

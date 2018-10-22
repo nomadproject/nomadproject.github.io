@@ -13,10 +13,7 @@ export default class Home extends Component {
 
     constructor(props) {
         super(props);
-    }
-
-    static async getInitialProps() {
-        return {
+        this.state = {
             "intro": {
                 "title": "A collaborative project by <a class='mid-gray no-underline underline-hover' href='https://twitter.com/abirahussein?lang=en'>Abira Hussein</a> and <a class='no-underline underline-hover' href='https://mnemoscene.io'>Mnemoscene</a>",
                 "text": "Nomad is a <a class='orange no-underline underline-hover' href='#mixed-reality'>mixed reality</a> experience premiering at the Somali Week Festival 2018. Alongside <a class='blue no-underline underline-hover' href='#workshops'>workshops</a> engaging Somali communities in London, Nomad explores the creative use of immersive and web-based technology to contextualise archival Somali <a class='green no-underline underline-hover' href='#objects'>objects</a> with the people and traditions to which they belong."
@@ -113,8 +110,8 @@ export default class Home extends Component {
                     <div class="dtc v-mid tc ph4 pv4">
                         <h1 class="mt2 mb0 firasans fw6 f2 f1-ns">Nomad</h1>
                         <div class="f5 f3-ns">
-                            <p class="fw6 lh-copy mw8 center firasans" dangerouslySetInnerHTML={{ __html: this.props.intro.title }}></p>
-                            <p class="lh-copy mw8 center firasans" dangerouslySetInnerHTML={{ __html: this.props.intro.text }}></p>
+                            <p class="fw6 lh-copy mw8 center firasans" dangerouslySetInnerHTML={{ __html: this.state.intro.title }}></p>
+                            <p class="lh-copy mw8 center firasans" dangerouslySetInnerHTML={{ __html: this.state.intro.text }}></p>
                         </div>
                         <div class="cf mw7 center">
                             <a class="link dim gray dib h2 w2 br-100 mr3 " href="https://twitter.com/hashtag/nomadproject?src=hash"
@@ -141,7 +138,7 @@ export default class Home extends Component {
 
                 <main ref={ref => this.sectionContainer = ref}>
                     {
-                        this.props.sections.map(({ id, img, title, text, link, linktext }) => (
+                        this.state.sections.map(({ id, img, title, text, link, linktext }) => (
                             <HomeSection id={id} img={img} title={title} text={text} link={link} linktext={linktext} />
                         ))
                     }
