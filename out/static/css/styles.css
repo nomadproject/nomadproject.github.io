@@ -47,6 +47,10 @@ a {
     height: 480px;
 }
 
+#debug {
+    display: none;
+}
+
 iiif-gallery-item {
     cursor: pointer;
     font-family: 'Lato', sans-serif;

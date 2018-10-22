@@ -75,7 +75,7 @@ export default class Objects extends Component {
 
 				<Footer />
 
-				<script src="/static/uv/uv.js"></script>
+				<script async src="/static/uv/uv.js"></script>
 
 			</div>
 		)

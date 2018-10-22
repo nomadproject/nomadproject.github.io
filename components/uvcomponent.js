@@ -10,27 +10,16 @@ export default class UVComponent extends Component {
 
 	constructor(props) {
         super(props);
-    }
-
-    openManifest() {
-
-        // show the UV (if hidden) and scroll into view
-        this.uvEl.style.display = 'block';
-        this.uvEl.scrollIntoView();
-
-        this.uv.set(Object.assign({}, this.uvstate, {
-            collectionIndex: 0,
-            manifestIndex: 0,
-            sequenceIndex: 0,
-            canvasIndex: 0
-        }));
-    }
-
-    componentDidMount() {
 
         var that = this;
 
+        if (typeof window === 'undefined') {
+            return;
+        }
+
         window.addEventListener('uvLoaded', function (e) {
+
+            //console.log('uvloaded');
 
             that.urlDataProvider = new UV.URLDataProvider();
 
@@ -49,7 +38,7 @@ export default class UVComponent extends Component {
         
             that.uvEl = document.querySelector('#' + that.props.id || '#uv');
             that.uv = createUV(that.uvEl, that.uvstate, that.urlDataProvider);
-        
+
             that.uv.on('created', function () {
                 Utils.Urls.setHashParameter('manifest', that.uvstate.iiifResourceUri);
             });
@@ -62,6 +51,20 @@ export default class UVComponent extends Component {
             }
         
         }, false);
+    }
+
+    openManifest() {
+
+        // show the UV (if hidden) and scroll into view
+        this.uvEl.style.display = 'block';
+        this.uvEl.scrollIntoView();
+
+        this.uv.set(Object.assign({}, this.uvstate, {
+            collectionIndex: 0,
+            manifestIndex: 0,
+            sequenceIndex: 0,
+            canvasIndex: 0
+        }));
     }
 
     componentWillReceiveProps(nextProps) {
