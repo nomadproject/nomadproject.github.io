@@ -68,8 +68,8 @@ export default class UVComponent extends Component {
     }
 
     componentWillReceiveProps(nextProps) {
-        // if it's not the initial props, and a manifest has been set
-        if (this.uvstate && nextProps.manifest) {
+        // if it's not the initial props, and a manifest has been set, and the current manifest isn't the next one (fix for IE recursion bug)
+        if (this.uvstate && nextProps.manifest && this.uvstate.iiifResourceUri !== nextProps.manifest) {
             this.uvstate.iiifResourceUri = nextProps.manifest;
             this.openManifest();
         }
