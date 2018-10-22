@@ -3,7 +3,10 @@ import { Component } from "react";
 
 export default class UVComponent extends Component {
 
+    uvEl;
     uv;
+    uvstate;
+    urlDataProvider;
 
 	constructor(props) {
         super(props);
@@ -11,20 +14,16 @@ export default class UVComponent extends Component {
 
     openManifest() {
 
-        window.scrollTo(0, 0);
-    
-        document.querySelector('.uv').style.display = 'block';
+        // show the UV (if hidden) and scroll into view
+        this.uvEl.style.display = 'block';
+        this.uvEl.scrollIntoView();
 
-        this.uv.set({
-            root: this.uvstate.root,
-            configUri: this.uvstate.configUri,
-            iiifResourceUri: this.uvstate.iiifResourceUri,
+        this.uv.set(Object.assign({}, this.uvstate, {
             collectionIndex: 0,
             manifestIndex: 0,
             sequenceIndex: 0,
-            canvasIndex: 0,
-            locales: this.uvstate.locales
-        });
+            canvasIndex: 0
+        }));
     }
 
     componentDidMount() {
@@ -33,27 +32,23 @@ export default class UVComponent extends Component {
 
         window.addEventListener('uvLoaded', function (e) {
 
+            that.urlDataProvider = new UV.URLDataProvider();
+
             that.uvstate = {
-                urlDataProvider: new UV.URLDataProvider(),
                 root: that.props.root,
                 configUri: that.props.configUri,
                 locales: [{ name: 'en-GB' }],
-                iiifResourceUri: ''
+                iiifResourceUri: '',
+                collectionIndex: Number(that.urlDataProvider.get('c', 0)),
+                manifestIndex: Number(that.urlDataProvider.get('m', 0)),
+                sequenceIndex: Number(that.urlDataProvider.get('s', 0)),
+                canvasIndex: Number(that.urlDataProvider.get('cv', 0)),
+                rotation: Number(that.urlDataProvider.get('r', 0)),
+                xywh: that.urlDataProvider.get('xywh', '')
             }
-
-            var data = {
-                root: that.uvstate.root,
-                configUri: that.uvstate.configUri,
-                collectionIndex: Number(that.uvstate.urlDataProvider.get('c', 0)),
-                manifestIndex: Number(that.uvstate.urlDataProvider.get('m', 0)),
-                sequenceIndex: Number(that.uvstate.urlDataProvider.get('s', 0)),
-                canvasIndex: Number(that.uvstate.urlDataProvider.get('cv', 0)),
-                rotation: Number(that.uvstate.urlDataProvider.get('r', 0)),
-                xywh: that.uvstate.urlDataProvider.get('xywh', ''),
-                locales: that.uvstate.locales
-            };
         
-            that.uv = createUV('#uv', data, that.uvstate.urlDataProvider);
+            that.uvEl = document.querySelector('#uv');
+            that.uv = createUV(that.uvEl, that.uvstate, that.urlDataProvider);
         
             that.uv.on('created', function () {
                 Utils.Urls.setHashParameter('manifest', that.uvstate.iiifResourceUri);
@@ -70,7 +65,8 @@ export default class UVComponent extends Component {
     }
 
     componentWillReceiveProps(nextProps) {
-        if (nextProps.manifest) {
+        // if it's not the initial props, and a manifest has been set
+        if (this.uvstate && nextProps.manifest) {
             this.uvstate.iiifResourceUri = nextProps.manifest;
             this.openManifest();
         }
