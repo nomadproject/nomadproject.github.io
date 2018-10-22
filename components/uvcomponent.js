@@ -47,7 +47,7 @@ export default class UVComponent extends Component {
                 xywh: that.urlDataProvider.get('xywh', '')
             }
         
-            that.uvEl = document.querySelector('#uv');
+            that.uvEl = document.querySelector('#' + that.props.id || '#uv');
             that.uv = createUV(that.uvEl, that.uvstate, that.urlDataProvider);
         
             that.uv.on('created', function () {

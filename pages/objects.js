@@ -67,7 +67,7 @@ export default class Objects extends Component {
 
 				<main>
 
-					<UV root={this.state.uv.root} configUri={this.state.uv.configUri} manifest={this.state.uv.manifest} />
+					<UV id="uv" root={this.state.uv.root} configUri={this.state.uv.configUri} manifest={this.state.uv.manifest} />
 
 					<iiif-gallery manifest={this.state.manifest} ignore={this.state.ignore}></iiif-gallery>
 
