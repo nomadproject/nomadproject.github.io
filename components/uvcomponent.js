@@ -3,6 +3,8 @@ import { Component } from "react";
 
 export default class UVComponent extends Component {
 
+    uv;
+
 	constructor(props) {
         super(props);
     }
@@ -13,7 +15,7 @@ export default class UVComponent extends Component {
     
         document.querySelector('.uv').style.display = 'block';
 
-        window.uv.set({
+        this.uv.set({
             root: window.uvstate.root,
             configUri: window.uvstate.configUri,
             iiifResourceUri: window.uvstate.iiifResourceUri,
@@ -51,9 +53,9 @@ export default class UVComponent extends Component {
                 locales: window.uvstate.locales
             };
         
-            window.uv = createUV('#uv', data, window.uvstate.urlDataProvider);
+            that.uv = createUV('#uv', data, window.uvstate.urlDataProvider);
         
-            window.uv.on('created', function () {
+            that.uv.on('created', function () {
                 Utils.Urls.setHashParameter('manifest', window.uvstate.iiifResourceUri);
             });
 
