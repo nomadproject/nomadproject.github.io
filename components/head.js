@@ -27,11 +27,11 @@ const Head = props => (
 			content={props.description || defaultDescription}
 		/>
 		<meta name="viewport" content="width=device-width, initial-scale=1" />
-		<link rel="icon" sizes="192x192" href="/static/touch-icon.png" />
-		<link rel="apple-touch-icon" href="/static/touch-icon.png" />
-		<link rel="mask-icon" href="/static/favicon-mask.svg" color="#49B882" />
+		{/*<link rel="icon" sizes="192x192" href="/static/touch-icon.png" />
+		<link rel="apple-touch-icon" href="/static/touch-icon.png" /> 
+		<link rel="mask-icon" href="/static/favicon-mask.svg" color="#49B882" />*/}
 		<link rel="icon" href="/static/favicon.ico" />
-		<link rel="stylesheet" type="text/css" href="https://unpkg.com/tachyons/css/tachyons.min.css"></link>
+		<link rel="stylesheet" type="text/css" href="https://unpkg.com/tachyons/css/tachyons.min.css" />
 		<link rel="stylesheet" type="text/css" href="/static/css/styles.css" />
 		<link href="https://fonts.googleapis.com/css?family=Fira+Sans" rel="stylesheet" />
 		<link href="https://fonts.googleapis.com/css?family=Merriweather" rel="stylesheet" />

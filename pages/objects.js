@@ -9,38 +9,44 @@ export default class Objects extends Component {
 	constructor(props) {
 		super(props);
 		this.state = {
-				manifest: "https://nomad-project.co.uk/objects/collection/index.json",
-				ignore: "https://nomad-project.co.uk/objects/collection/wooden-bowl/index.json",
-				headerMessage: "Watch this space for more objects and stories from the Nomad workshops...",
-				uv: {
-				   root: "../static/uv",
-				   configUri: "../static/uv.json",
-				   manifest: ""
-			   }
-		   };
+			manifest: "https://nomad-project.co.uk/objects/collection/index.json",
+			ignore: "https://nomad-project.co.uk/objects/collection/wooden-bowl/index.json",
+			headerMessage: "Watch this space for more objects and stories from the Nomad workshops...",
+			uv: {
+				root: "../static/uv",
+				configUri: "../static/uv.json",
+				manifest: ""
+			}
+		};
     }
 
-	componentDidMount() {
+	componentWillMount() {
 
-		const that = this;
+		// prevent server-side compilation error
+		if (typeof window === 'undefined') {
+			return;
+		}
 
-		const iiifGallery = document.querySelector('iiif-gallery');
-	
-		iiifGallery.addEventListener('onSelectManifest', function (evt) {
-			that.setState(function(state, props) {
-				return {
-					uv: {
-						manifest: evt.detail.id
-					}
-				};
+		var that = this;
+
+		// must wait for UV + manifesto to load before iiif-gallery can use manifesto
+        window.addEventListener('uvLoaded', function (e) {
+
+			var iiifGallery = document.querySelector('iiif-gallery');
+
+			iiifGallery.addEventListener('onSelectManifest', function (evt) {
+				that.setState(function(state, props) {
+					return {
+						uv: {
+							manifest: evt.detail.id
+						}
+					};
+				});
 			});
-		});
-	
-		iiifGallery.addEventListener('onSelectCollection', function (evt) {
-			console.log(evt.detail.id);
-			//props.manifest = evt.detail.id;
-			//that.setState(that.state);
-		});
+
+			iiifGallery.manifest = that.state.manifest;
+
+		}, false);
 
 	}
 
@@ -69,7 +75,7 @@ export default class Objects extends Component {
 
 					<UV id="uv" root={this.state.uv.root} configUri={this.state.uv.configUri} manifest={this.state.uv.manifest} />
 
-					<iiif-gallery manifest={this.state.manifest} ignore={this.state.ignore}></iiif-gallery>
+					<iiif-gallery ignore={this.state.ignore}></iiif-gallery>
 
 				</main>
 
