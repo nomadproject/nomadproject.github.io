@@ -1,3 +1,6 @@
+import StretchImage from './stretch-image';
+import Vimeo from './vimeo';
+
 function SectionLink(props) {
     if (props.link) {
         return (
@@ -15,28 +18,31 @@ function SectionLink(props) {
     return (null);
 }
 
+function VideoOrImage(props) {
+    if (props.video) {
+        return (
+            <Vimeo video={props.video} />
+        )
+    } else {
+        return (
+            <StretchImage src={props.img} alt={props.title} />
+        )
+    }
+}
+
 const HomeSection = props => (
     <section id={props.id}>
         <article class="cf center w-90 pt4 pb4">
-            <div class="left fl-ns w-two-thirds-ns tc">
-                <img src={props.img} alt={props.title} class="w-80-ns" />
+            <div class="left fl-ns w-two-thirds-ns tc ph4-ns">
+                <VideoOrImage video={props.video} img={props.img} />
             </div>
             <div class="right fl-ns center w-third-ns tl relative">
-                <h2 class="absolute f3 fw4 firasans green bg-white pa2" style={{ left: '-30%' }}>{props.title}</h2>
+                <h2 class={`absolute f3 fw4 firasans bg-white pa2 ${props.color}`} style={{ left: '-15%' }}>{props.title}</h2>
                 <p class="pt5 lato lh-copy f4" dangerouslySetInnerHTML={{ __html: props.text }}></p>
                 <SectionLink link={props.link} text={props.linktext} />
             </div>
         </article>
     </section>
 )
-
-HomeSection.propTypes = {
-    id: string,
-    img: string,
-    title: string,
-    text: string,
-    link: string,
-    linktext: string
-}
 
 export default HomeSection;

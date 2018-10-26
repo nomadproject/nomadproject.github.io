@@ -20,20 +20,23 @@ export default class Home extends Component {
             },
             "sections": [
                 {
+                    "color": "orange",
                     "id": "mixed-reality",
-                    "img": "/static/img/hololens-1.jpg",
+                    "video": "https://player.vimeo.com/video/97911584?title=0&byline=0&portrait=0",
                     "title": "Mixed Reality",
                     "text": "Nomad is a Mixed Reality experience for the Microsoft HoloLens developed by <a class='no-underline underline-hover' href='https://mnemoscene.io'>Mnemoscene.</a> The experience layers sound recordings from the British Library, digitised objects and photographs from the British Museum and Powell-Cotton Museum, and people presented as 3D holograms into the user’s real-life environment."
                 },
                 {
+                    "color": "blue",
                     "id": "workshops",
                     "img": "/static/img/workshops.jpg",
                     "title": "Workshops",
                     "text": "This project aims to gather and share the heritage of Somali communities in London with the public. Workshops invite participants to record their own stories and create 3D models of objects from their personal collections using photogrammetry."
                 },
                 {
+                    "color": "green",
                     "id": "objects",
-                    "img": "/static/img/object.jpg",
+                    "img": "/static/img/workshops.jpg",
                     "title": "Objects",
                     "text": "A collection of 3D objects, photographs and audio recordings from the British Museum and Nomad workshops.",
                     "link": "/objects/index.html",
@@ -104,7 +107,9 @@ export default class Home extends Component {
     render() {
         return (
             <div>
-                <Head title="Nomad Project" />
+                <Head title="Nomad Project">
+                    <script src="https://player.vimeo.com/api/player.js"></script>
+                </Head>
 
                 <header class="vh-100 dt w-100">
                     <div class="dtc v-mid tc ph4 pv4">
@@ -138,8 +143,8 @@ export default class Home extends Component {
 
                 <main ref={ref => this.sectionContainer = ref}>
                     {
-                        this.state.sections.map(({ id, img, title, text, link, linktext }) => (
-                            <HomeSection id={id} img={img} title={title} text={text} link={link} linktext={linktext} />
+                        this.state.sections.map(({ color, id, video, img, title, text, link, linktext }) => (
+                            <HomeSection color={color} id={id} video={video} img={img} title={title} text={text} link={link} linktext={linktext} />
                         ))
                     }
                 </main>
