@@ -36,7 +36,7 @@ export default class Home extends Component {
                 {
                     "color": "green",
                     "id": "objects",
-                    "img": "/static/img/workshops.jpg",
+                    "img": "/static/img/object.jpg",
                     "title": "Objects",
                     "text": "A collection of 3D objects, photographs and audio recordings from the British Museum and Nomad workshops.",
                     "link": "/objects/index.html",

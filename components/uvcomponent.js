@@ -16,7 +16,10 @@ export default class UVComponent extends Component {
 
         // show the UV (if hidden) and scroll into view
         this.uvEl.style.display = 'block';
-        this.uvEl.scrollIntoView();
+
+        if (this.props.scrollIntoView) {
+            this.uvEl.scrollIntoView();
+        }
 
         this.uv.set(Object.assign({}, this.uvstate, {
             collectionIndex: 0,

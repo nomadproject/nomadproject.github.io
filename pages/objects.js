@@ -73,7 +73,7 @@ export default class Objects extends Component {
 
 				<main>
 
-					<UV id="uv" root={this.state.uv.root} configUri={this.state.uv.configUri} manifest={this.state.uv.manifest} />
+					<UV id="uv" root={this.state.uv.root} configUri={this.state.uv.configUri} manifest={this.state.uv.manifest} scrollIntoView="true" />
 
 					<iiif-gallery ignore={this.state.ignore}></iiif-gallery>
 
