@@ -29,7 +29,7 @@ export default class Objects extends Component {
 
 		var that = this;
 
-		// must wait for UV + manifesto to load before iiif-gallery can use manifesto
+		// must wait for UV to load before iiif-gallery can use manifesto (bundled in uv.js)
         window.addEventListener('uvLoaded', function (e) {
 
 			var iiifGallery = document.querySelector('iiif-gallery');

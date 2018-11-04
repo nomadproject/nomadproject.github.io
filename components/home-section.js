@@ -37,7 +37,7 @@ const HomeSection = props => (
                 <VideoOrImage video={props.video} img={props.img} />
             </div>
             <div class="right fl-ns center w-third-ns tl relative">
-                <h2 class={`absolute f3 fw4 firasans bg-white pa2 ${props.color}`} style={{ left: '-15%' }}>{props.title}</h2>
+                <h2 class={`absolute f3 fw4 firasans bg-white ${props.color}`}>{props.title}</h2>
                 <p class="pt5 lato lh-copy f4" dangerouslySetInnerHTML={{ __html: props.text }}></p>
                 <SectionLink link={props.link} text={props.linktext} />
             </div>

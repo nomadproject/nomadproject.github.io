@@ -16,13 +16,13 @@ export default class Home extends Component {
         this.state = {
             "intro": {
                 "title": "A collaborative project by <a class='mid-gray no-underline underline-hover' href='https://twitter.com/abirahussein?lang=en'>Abira Hussein</a> and <a class='no-underline underline-hover' href='https://mnemoscene.io'>Mnemoscene</a>",
-                "text": "Nomad is a <a class='orange no-underline underline-hover' href='#mixed-reality'>mixed reality</a> experience premiering at the Somali Week Festival 2018. Alongside <a class='blue no-underline underline-hover' href='#workshops'>workshops</a> engaging Somali communities in London, Nomad explores the creative use of immersive and web-based technology to contextualise archival Somali <a class='green no-underline underline-hover' href='#objects'>objects</a> with the people and traditions to which they belong."
+                "text": "Nomad is a <a class='orange no-underline underline-hover' href='#mixed-reality'>mixed reality</a> experience premiering at the Somali Week Festival 2018. Alongside <a class='blue no-underline underline-hover' href='#workshops'>workshops</a> engaging Somali communities in London, Nomad explores the creative use of immersive and web-based technology to contextualise archival Somali <a class='green no-underline underline-hover' href='#archive'>objects</a> with the people and traditions to which they belong."
             },
             "sections": [
                 {
                     "color": "orange",
                     "id": "mixed-reality",
-                    "video": "https://player.vimeo.com/video/97911584?title=0&byline=0&portrait=0",
+                    "video": "https://player.vimeo.com/video/298863478?title=0&byline=0&portrait=0",
                     "title": "Mixed Reality",
                     "text": "Nomad is a Mixed Reality experience for the Microsoft HoloLens developed by <a class='no-underline underline-hover' href='https://mnemoscene.io'>Mnemoscene.</a> The experience layers sound recordings from the British Library, digitised objects and photographs from the British Museum and Powell-Cotton Museum, and people presented as 3D holograms into the user’s real-life environment."
                 },
@@ -35,12 +35,12 @@ export default class Home extends Component {
                 },
                 {
                     "color": "green",
-                    "id": "objects",
+                    "id": "archive",
                     "img": "/static/img/object.jpg",
-                    "title": "Objects",
+                    "title": "Archive",
                     "text": "A collection of 3D objects, photographs and audio recordings from the British Museum and Nomad workshops.",
-                    "link": "/objects/index.html",
-                    "linktext": "view objects"
+                    "link": "/archive/index.html",
+                    "linktext": "view archive"
                 }
             ]
         }
