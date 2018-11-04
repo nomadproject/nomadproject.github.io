@@ -1,4 +1,4 @@
-import StretchImage from './stretch-image';
+import Carousel from './carousel';
 import Vimeo from './vimeo';
 
 function SectionLink(props) {
@@ -18,14 +18,14 @@ function SectionLink(props) {
     return (null);
 }
 
-function VideoOrImage(props) {
+function VideoOrImages(props) {
     if (props.video) {
         return (
             <Vimeo video={props.video} />
         )
     } else {
         return (
-            <StretchImage src={props.img} alt={props.title} />
+            <Carousel images={props.images} />
         )
     }
 }
@@ -34,7 +34,7 @@ const HomeSection = props => (
     <section id={props.id}>
         <article class="cf center w-90 pt4 pb4">
             <div class="left fl-ns w-two-thirds-ns tc ph4-ns">
-                <VideoOrImage video={props.video} img={props.img} />
+                <VideoOrImages video={props.video} images={props.images} />
             </div>
             <div class="right fl-ns center w-third-ns tl relative">
                 <h2 class={`absolute f3 fw4 firasans bg-white ${props.color}`}>{props.title}</h2>

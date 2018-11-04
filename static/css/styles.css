@@ -47,6 +47,14 @@ a {
     height: 480px;
 }
 
+.siema {
+    text-align: unset;
+}
+
+.siema img {
+    width: 100%;
+}
+
 #debug {
     display: none;
 }

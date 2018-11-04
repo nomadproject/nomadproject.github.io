@@ -29,14 +29,14 @@ export default class Home extends Component {
                 {
                     "color": "blue",
                     "id": "workshops",
-                    "img": "/static/img/workshops.jpg",
+                    "images": ["/static/img/workshops.jpg", "/static/img/object.jpg"],
                     "title": "Workshops",
                     "text": "This project aims to gather and share the heritage of Somali communities in London with the public. Workshops invite participants to record their own stories and create 3D models of objects from their personal collections using photogrammetry."
                 },
                 {
                     "color": "green",
                     "id": "archive",
-                    "img": "/static/img/object.jpg",
+                    "images": ["/static/img/object.jpg"],
                     "title": "Archive",
                     "text": "A collection of 3D objects, photographs and audio recordings from the British Museum and Nomad workshops.",
                     "link": "/archive/index.html",
@@ -109,6 +109,7 @@ export default class Home extends Component {
             <div>
                 <Head title="Nomad Project">
                     <script src="https://player.vimeo.com/api/player.js"></script>
+                    <script src="https://unpkg.com/siema/dist/siema.min.js"></script>
                 </Head>
 
                 <header class="vh-100 dt w-100">
@@ -143,8 +144,8 @@ export default class Home extends Component {
 
                 <main ref={ref => this.sectionContainer = ref}>
                     {
-                        this.state.sections.map(({ color, id, video, img, title, text, link, linktext }) => (
-                            <HomeSection color={color} id={id} video={video} img={img} title={title} text={text} link={link} linktext={linktext} />
+                        this.state.sections.map(({ color, id, video, images, title, text, link, linktext }) => (
+                            <HomeSection color={color} id={id} video={video} images={images} title={title} text={text} link={link} linktext={linktext} />
                         ))
                     }
                 </main>
