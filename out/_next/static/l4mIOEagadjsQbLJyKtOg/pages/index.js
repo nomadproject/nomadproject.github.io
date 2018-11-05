@@ -1,1 +1,0 @@
-(window.webpackJsonp=window.webpackJsonp||[]).push([[7],{208:function(e,t,n){__NEXT_REGISTER_PAGE("/",function(){return e.exports=n(209),{page:e.exports.default}})},209:function(e,t,n){"use strict";n.r(t);var a=n(0),o=n.n(a),r=(n(19),n(52));n(51);t.default=function(){return o.a.createElement("div",null,o.a.createElement(r.a,{title:"Nomad Project"}))}}},[[208,1,0]]]);
