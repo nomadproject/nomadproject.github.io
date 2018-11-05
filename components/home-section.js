@@ -5,7 +5,7 @@ function SectionLink(props) {
     if (props.link) {
         return (
             <p>
-                <a href={props.link} class="f5 no-underline green bg-animate hover-bg-green hover-white inline-flex items-center pa3 ba border-box">
+                <a href={props.link} class="f5 no-underline green bg-animate hover-bg-green hover-white inline-flex items-center ph3 pv2 ba border-box">
                     <span class="pr1 f4">{props.text}</span>
                     <svg class="w1" data-icon="chevronRight" viewBox="0 0 32 32" fill="currentcolor">
                         <title>chevronRight icon</title>

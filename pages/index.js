@@ -29,7 +29,7 @@ export default class Home extends Component {
                 {
                     "color": "blue",
                     "id": "workshops",
-                    "images": ["/static/img/workshops.jpg", "/static/img/object.jpg"],
+                    "images": ["/static/img/workshop1.jpg", "/static/img/workshop2.jpg", "/static/img/workshop3.jpg", "/static/img/workshop4.jpg"],
                     "title": "Workshops",
                     "text": "This project aims to gather and share the heritage of Somali communities in London with the public. Workshops invite participants to record their own stories and create 3D models of objects from their personal collections using photogrammetry."
                 },
@@ -109,7 +109,6 @@ export default class Home extends Component {
             <div>
                 <Head title="Nomad Project">
                     <script src="https://player.vimeo.com/api/player.js"></script>
-                    <script src="https://unpkg.com/siema/dist/siema.min.js"></script>
                 </Head>
 
                 <header class="vh-100 dt w-100">

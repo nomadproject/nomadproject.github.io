@@ -47,11 +47,7 @@ a {
     height: 480px;
 }
 
-.siema {
-    text-align: unset;
-}
-
-.siema img {
+.crossfade-img img {
     width: 100%;
 }
 
