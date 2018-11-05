@@ -1,0 +1,61 @@
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    overflow-x: hidden;
+    font-family: sans-serif;
+}
+
+a {
+    color: #555;
+}
+
+.palette-red {
+    color:#960200;
+}
+
+.switched .right {
+    text-align: right;
+}
+
+.switched .right h2 {
+    right: 0;
+}
+
+.mobile section article h2 {
+    left: 0px !important;
+    padding: 0px !important;
+}
+
+.merriweather {
+    font-family: 'Merriweather', serif;
+}
+
+.firasans {
+    font-family: 'Fira Sans', sans-serif;
+}
+
+.lato {
+    font-family: 'Lato', sans-serif;
+}
+
+#uv {
+    display: none;
+    height: 480px;
+}
+
+.crossfade-img img {
+    width: 100%;
+}
+
+#debug {
+    display: none;
+}
+
+iiif-gallery-item {
+    cursor: pointer;
+    font-family: 'Lato', sans-serif;
+}
