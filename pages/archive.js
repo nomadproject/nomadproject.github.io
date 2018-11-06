@@ -10,6 +10,7 @@ export default class Archive extends Component {
 		super(props);
 		this.state = {
 			manifest: "https://nomad-project.co.uk/objects/collection/index.json",
+			ignore: "https://nomad-project.co.uk/objects/collection/wooden-bowl/index.json",
 			headerMessage: "Watch this space for more objects and stories from the Nomad workshops...",
 			uv: {
 				root: "../static/uv",
