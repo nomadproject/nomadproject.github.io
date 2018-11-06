@@ -13,7 +13,7 @@ export default class AR extends Component {
 
         return window.location.replace('/static/ar.html');
     }
-    
+
     render() {
 		return (null)
 	}
