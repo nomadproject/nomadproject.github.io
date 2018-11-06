@@ -4,7 +4,7 @@ import Footer from '../components/footer';
 import UV from '../components/uvcomponent';
 import { Component } from "react";
 
-export default class Objects extends Component {
+export default class Archive extends Component {
 
 	constructor(props) {
 		super(props);
@@ -54,7 +54,7 @@ export default class Objects extends Component {
 		return (
 			<div>
 
-				<Head title="Objects">
+				<Head title="Archive">
 					<script src="https://unpkg.com/iiif-gallery/dist/iiifgallery.js"></script>
 					<script src="/static/uv/lib/offline.js"></script>
 					<script src="/static/uv/helpers.js"></script>
