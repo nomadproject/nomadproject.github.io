@@ -1,5 +1,5 @@
 {
-  "name": "nomadproject-next.github.io",
+  "name": "nomadproject.github.io",
   "scripts": {
     "postinstall": "npm run copy-uv",
     "copy-uv": "rm -rf static/uv && cp -R node_modules/universalviewer/dist static/uv",
@@ -16,7 +16,7 @@
     "next": "^7.0.2",
     "react": "^16.5.2",
     "react-dom": "^16.5.2",
-    "universalviewer": "3.0.28"
+    "universalviewer": "3.0.31"
   },
   "devDependencies": {
     "uglify-js": "^3.4.4"
