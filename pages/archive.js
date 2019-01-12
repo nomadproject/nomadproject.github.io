@@ -56,7 +56,7 @@ export default class Archive extends Component {
 			<div>
 
 				<Head title="Archive">
-					<script src="https://unpkg.com/iiif-gallery/dist/iiifgallery.js"></script>
+					<script src="https://unpkg.com/iiif-gallery@0.0.25/dist/iiifgallery.js"></script>
 					<script src="/static/uv/lib/offline.js"></script>
 					<script src="/static/uv/helpers.js"></script>
 				</Head>
