@@ -1,1 +1,0 @@
-(window.webpackJsonp=window.webpackJsonp||[]).push([[7],{209:function(n,t,e){"use strict";function o(n){if("undefined"!=typeof window)return window.location.replace("/static/ar.html")}e.r(t),e.d(t,"default",function(){return o})},210:function(n,t,e){__NEXT_REGISTER_PAGE("/ar",function(){return n.exports=e(209),{page:n.exports.default}})}},[[210,1]]]);

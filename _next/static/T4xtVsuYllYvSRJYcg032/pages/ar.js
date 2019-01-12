@@ -1,1 +1,0 @@
-(window.webpackJsonp=window.webpackJsonp||[]).push([[7],{209:function(n,t,o){"use strict";function e(n){window.location.replace("/static/ar.html")}o.r(t),o.d(t,"default",function(){return e})},210:function(n,t,o){__NEXT_REGISTER_PAGE("/ar",function(){return n.exports=o(209),{page:n.exports.default}})}},[[210,1]]]);
