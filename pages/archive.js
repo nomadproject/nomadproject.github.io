@@ -9,8 +9,8 @@ export default class Archive extends Component {
 	constructor(props) {
 		super(props);
 		this.state = {
-			//manifest: "https://nomad-project.co.uk/objects/collection/index.json",
-			manifest: "https://nomadproject.netlify.com/collection/index.json",
+			manifest: "https://nomad-project.co.uk/objects/collection/index.json",
+			//manifest: "https://nomadproject.netlify.com/collection/index.json",
 			ignore: "https://nomad-project.co.uk/objects/collection/wooden-bowl/index.json",
 			headerMessage: "Watch this space for more objects and stories from the Nomad workshops...",
 			uv: {
