@@ -16,7 +16,7 @@ export default class Home extends Component {
         this.state = {
             "intro": {
                 "title": "A collaborative project by <a class='mid-gray no-underline underline-hover' href='https://twitter.com/abirahussein?lang=en'>Abira Hussein</a> and <a class='no-underline underline-hover' href='https://mnemoscene.io'>Mnemoscene</a>",
-                "text": "Nomad is a <a class='orange no-underline underline-hover' href='#mixed-reality'>mixed reality</a> experience premiering at the Somali Week Festival 2018. Alongside <a class='blue no-underline underline-hover' href='#workshops'>workshops</a> engaging Somali communities in London, Nomad explores the creative use of immersive and web-based technology to contextualise archival Somali <a class='green no-underline underline-hover' href='#archive'>objects</a> with the people and traditions to which they belong."
+                "text": "Centered on <a class='blue no-underline underline-hover' href='#workshops'>workshops</a> engaging Somali communities, Nomad explores the creative use of immersive <a class='orange no-underline underline-hover' href='#mixed-reality'>mixed reality</a> and web-based technology to contextualise archival Somali <a class='green no-underline underline-hover' href='#archive'>objects</a> with the people and traditions to which they belong. <br/> The project is supported by the Heritage Lottery Fund (HLF) and premiered at the British Library and British Museum during Somali Week Festival 2018."
             },
             "sections": [
                 {
@@ -24,21 +24,21 @@ export default class Home extends Component {
                     "id": "mixed-reality",
                     "video": "https://player.vimeo.com/video/298863478?title=0&byline=0&portrait=0",
                     "title": "Mixed Reality",
-                    "text": "Nomad is a Mixed Reality experience for the Microsoft HoloLens developed by <a class='no-underline underline-hover' href='https://mnemoscene.io'>Mnemoscene.</a> The experience layers sound recordings from the British Library, digitised objects and photographs from the British Museum and Powell-Cotton Museum, and people presented as 3D holograms into the user’s real-life environment."
+                    "text": "Nomad includes a Mixed Reality experience for the Microsoft HoloLens developed by <a class='no-underline underline-hover' href='https://mnemoscene.io'>Mnemoscene.</a> The experience layers sound recordings from the British Library, digitised objects and photographs from the British Museum and Powell-Cotton Museum, and people presented as 3D holograms into the user’s real-life environment."
                 },
                 {
                     "color": "blue",
                     "id": "workshops",
                     "images": ["/static/img/workshop1.jpg", "/static/img/workshop2.jpg", "/static/img/workshop3.jpg", "/static/img/workshop4.jpg"],
                     "title": "Workshops",
-                    "text": "This project aims to gather and share the heritage of Somali communities in London with the public. Workshops invite participants to record their own stories and create 3D models of objects from their personal collections using photogrammetry."
+                    "text": "This project aims to gather and share the heritage of Somali communities with the public. Workshop participants are invited to  share their stories and create 3D models of objects from their personal collections using photogrammetry. The outcomes from these workshops can be found in the archive."
                 },
                 {
                     "color": "green",
                     "id": "archive",
                     "images": ["/static/img/object.jpg"],
                     "title": "Archive",
-                    "text": "A collection of 3D objects, photographs and audio recordings from the British Museum and Nomad workshops.",
+                    "text": "A growing collection of 3D objects, photographs, and audio recordings from the British Museum and Nomad workshops.",
                     "link": "/archive/index.html",
                     "linktext": "view archive"
                 }

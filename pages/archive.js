@@ -11,8 +11,8 @@ export default class Archive extends Component {
 		this.state = {
 			manifest: "https://nomad-project.co.uk/objects/collection/index.json",
 			//manifest: "https://nomadproject.netlify.com/collection/index.json",
-			ignore: "https://nomad-project.co.uk/objects/collection/wooden-bowl/index.json",
-			headerMessage: "Watch this space for more objects and stories from the Nomad workshops...",
+			//ignore: "https://nomad-project.co.uk/objects/collection/wooden-bowl/index.json",
+			headerMessage: "",
 			uv: {
 				root: "../static/uv",
 				configUri: "../static/uv.json",

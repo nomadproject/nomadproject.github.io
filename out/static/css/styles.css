@@ -59,3 +59,13 @@ iiif-gallery-item {
     cursor: pointer;
     font-family: 'Lato', sans-serif;
 }
+
+.uv .centerPanel .content .iiif-av-component .canvas-container {
+    background-image: url('/static/img/mic.png');
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+.uv-av-extension .centerPanel .content .attribution {
+    display: none !important;
+}

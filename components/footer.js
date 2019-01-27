@@ -34,7 +34,10 @@ const Footer = props => (
 
     <small class="db tc">
         <p class="f6 fw3 lato">
-            icons via <a class="no-underline underline-hover" href="https://fontawesome.com">Font Awesome</a>
+            Built by <a href="https://mnemoscene.io">Mnemoscene</a> using <a href="https://universalviewer.io">Universal Viewer</a>
+        </p>
+        <p class="f6 fw3 lato">
+            icons via <a href="https://fontawesome.com">Font Awesome</a>
         </p>
     </small>
 
