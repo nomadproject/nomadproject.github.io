@@ -76,3 +76,7 @@ iiif-gallery iiif-gallery-item h3 {
 .uv-av-extension .centerPanel .content .attribution {
     display: none !important;
 }
+
+.uv-seadragon-extension .mobileFooterPanel {
+    display: none !important;
+}
