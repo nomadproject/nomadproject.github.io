@@ -62,7 +62,7 @@ export default class Archive extends Component {
 				</Head>
 
 				<header class="pa3 overflow-hidden">
-					<a href="/index.html#objects" class="db fl f5 lato no-underline green bg-animate hover-bg-green hover-white inline-flex items-center pa3 ba border-box mr4">
+					<a href="/index.html" class="db fl f5 lato no-underline green bg-animate hover-bg-green hover-white inline-flex items-center pa3 ba border-box mr4">
 						<svg class="w1" data-icon="chevronLeft" viewBox="0 0 32 32" fill="currentcolor">
 							<title>chevronLeft icon</title>
 							<path d="M20 1 L24 5 L14 16 L24 27 L20 31 L6 16 z"></path>

@@ -60,6 +60,13 @@ iiif-gallery-item {
     font-family: 'Lato', sans-serif;
 }
 
+iiif-gallery iiif-gallery-item h3 {
+    font-size: 1.1rem !important;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
 .uv .centerPanel .content .iiif-av-component .canvas-container {
     background-image: url('/static/img/mic.png');
     background-repeat: no-repeat;
