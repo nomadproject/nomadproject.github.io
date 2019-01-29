@@ -80,3 +80,11 @@ iiif-gallery iiif-gallery-item h3 {
 .uv-seadragon-extension .mobileFooterPanel {
     display: none !important;
 }
+
+.uv .centerPanel .content .iiif-av-component .hover-preview .label {
+    height: 25px !important;
+}
+
+.uv .centerPanel .content .iiif-av-component .controls-container .time-display {
+    padding-top: 10px !important;
+}
