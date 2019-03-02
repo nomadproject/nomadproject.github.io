@@ -10,7 +10,7 @@ export default class Archive extends Component {
 		super(props);
 		this.state = {
 			manifest: "https://nomad-project.co.uk/objects/collection/index.json",
-			//manifest: "https://nomadproject.netlify.com/collection/index.json",
+			//manifest: "https://nomad-project-preview.netlify.com/collection/index.json",
 			//ignore: "https://nomad-project.co.uk/objects/collection/wooden-bowl/index.json",
 			headerMessage: "",
 			uv: {
@@ -56,7 +56,7 @@ export default class Archive extends Component {
 			<div>
 
 				<Head title="Archive">
-					<script src="https://unpkg.com/iiif-gallery@0.0.25/dist/iiifgallery.js"></script>
+					<script src="https://unpkg.com/iiif-gallery@0.0.26/dist/iiifgallery.js"></script>
 					<script src="/static/uv/lib/offline.js"></script>
 					<script src="/static/uv/helpers.js"></script>
 				</Head>
