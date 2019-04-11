@@ -1,12 +1,10 @@
 # Testing on localhost
 
-Change `/pages/archive.js` to netlify address to see preview objects.
-
-    npm run build
-
-(ctrl + shift + b)
+    npm run build (ctrl + shift + b)
 
     npm run serve
+
+Change `/pages/archive.js` to netlify address to see preview objects.
 
 # Publishing
 
