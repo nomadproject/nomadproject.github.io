@@ -148,7 +148,7 @@ export default class Home extends Component {
                         ))
                     }
                 </main>
-
+                    
                 <Footer />
 
             </div>
