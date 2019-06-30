@@ -33,13 +33,13 @@ export default class Archive extends Component {
 		console.log('component will mount');
 
 		// must wait for UV to load before iiif-gallery can use manifesto (bundled in uv.js)
-    window.addEventListener('uvLoaded', function (e) {
+    	window.addEventListener('uvLoaded', function (e) {
 
 			console.log('uv loaded');
 
 			var iiifGallery = document.querySelector('iiif-gallery');
 
-			iiifGallery.addEventListener('onSelectManifest', function (evt) {
+			iiifGallery.addEventListener('selectManifest', function (evt) {
 				that.setState(function(state, props) {
 					return {
 						uv: {
