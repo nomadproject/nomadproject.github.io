@@ -79,11 +79,8 @@ export default class Archive extends Component {
 				</header>
 
 				<main>
-
 					<UV id="uv" root={this.state.uv.root} configUri={this.state.uv.configUri} manifest={this.state.uv.manifest} scrollIntoView="true" />
-
 					<iiif-gallery ignore={this.state.ignore} />
-
 				</main>
 
 				<Footer />
