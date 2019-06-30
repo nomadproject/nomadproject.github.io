@@ -67,22 +67,22 @@ export default class Archive extends Component {
 					<script src="/static/uv/helpers.js"></script>
 				</Head>
 
-				<header class="pa3 overflow-hidden">
-					<a href="/index.html" class="db fl f5 lato no-underline green bg-animate hover-bg-green hover-white inline-flex items-center pa3 ba border-box mr4">
-						<svg class="w1" data-icon="chevronLeft" viewBox="0 0 32 32" fill="currentcolor">
+				<header className="pa3 overflow-hidden">
+					<a href="/" className="db fl f5 lato no-underline green bg-animate hover-bg-green hover-white inline-flex items-center pa3 ba border-box mr4">
+						<svg className="w1" data-icon="chevronLeft" viewBox="0 0 32 32" fill="currentcolor">
 							<title>chevronLeft icon</title>
 							<path d="M20 1 L24 5 L14 16 L24 27 L20 31 L6 16 z"></path>
 						</svg>
-						<span class="pl1 f4">go back</span>
+						<span className="pl1 f4">go back</span>
 					</a>
-					<div class="db fl pt3 lato lh-copy" dangerouslySetInnerHTML={{ __html: this.state.headerMessage }}></div>
+					<div className="db fl pt3 lato lh-copy" dangerouslySetInnerHTML={{ __html: this.state.headerMessage }}></div>
 				</header>
 
 				<main>
 
 					<UV id="uv" root={this.state.uv.root} configUri={this.state.uv.configUri} manifest={this.state.uv.manifest} scrollIntoView="true" />
 
-					<iiif-gallery ignore={this.state.ignore}></iiif-gallery>
+					<iiif-gallery ignore={this.state.ignore} />
 
 				</main>
 

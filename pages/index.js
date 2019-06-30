@@ -39,7 +39,7 @@ export default class Home extends Component {
                     "images": ["/static/img/object.jpg"],
                     "title": "Archive",
                     "text": "A growing collection of 3D objects, photographs, and audio recordings from the British Museum and Nomad workshops.",
-                    "link": "/archive/index.html",
+                    "link": "/archive/",
                     "linktext": "view archive"
                 }
             ]
@@ -148,7 +148,7 @@ export default class Home extends Component {
                         ))
                     }
                 </main>
-                    
+
                 <Footer />
 
             </div>
