@@ -28,7 +28,7 @@ export default class Carousel extends Component {
 
     render() {
 		return (
-            <div class="crossfade-img" ref={ref => this.crossfade = ref}>
+            <div className="crossfade-img" ref={ref => this.crossfade = ref}>
                 <CrossfadeImage
                     src={this.props.images[this.state.imageIndex]}
                     duration={1000}

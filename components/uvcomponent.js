@@ -84,7 +84,7 @@ export default class UVComponent extends Component {
 
     render() {
 		return (
-			<div id="uv" class="uv"></div>
+			<div id="uv" className="uv"></div>
         )
     }
 
