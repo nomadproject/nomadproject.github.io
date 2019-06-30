@@ -7,7 +7,7 @@ const Footer = props => (
 
     <div className="pv4 ph3 ph5-ns tc">
         <a className="dib h4 w4 mr3 mb4" href="http://www.kayd.org/">
-            <img src="/static/img/kayd-logo.png" style={{height: '100px;'}} alt="KAYD Somali Arts and Culture" />
+            <img src="/static/img/kayd-logo.png" style={{height: '100px'}} alt="KAYD Somali Arts and Culture" />
         </a>
         <a className="dib h4 w4 mr3 mb4" href="https://www.hlf.org.uk/">
             <img src="/static/img/hlf-logo.png" alt="Heritage Lottery Fund" />
