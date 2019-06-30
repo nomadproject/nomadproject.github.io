@@ -7,7 +7,7 @@
     "cname": "echo nomad-project.co.uk > ./out/CNAME",
     "nojekyll": "echo.> ./out/.nojekyll",
     "build": "next build",
-    "start": "NODE_ENV=production node server.js",
+    "start": "node server.js",
     "export": "next export",
     "serve": "npx serve ./out",
     "publish": "git subtree push --prefix out origin master"
