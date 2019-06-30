@@ -144,7 +144,7 @@ export default class Home extends Component {
                 <main ref={ref => this.sectionContainer = ref}>
                     {
                         this.state.sections.map(({ color, id, video, images, title, text, link, linktext }) => (
-                            <HomeSection color={color} id={id} video={video} images={images} title={title} text={text} link={link} linktext={linktext} />
+                            <HomeSection key={id} color={color} id={id} video={video} images={images} title={title} text={text} link={link} linktext={linktext} />
                         ))
                     }
                 </main>
