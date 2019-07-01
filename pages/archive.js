@@ -3,6 +3,7 @@ import Head from '../components/head';
 import Footer from '../components/footer';
 import UV from '../components/uvcomponent';
 import { Component } from "react";
+import Link from 'next/link';
 
 export default class Archive extends Component {
 
@@ -68,13 +69,17 @@ export default class Archive extends Component {
 				</Head>
 
 				<header className="pa3 overflow-hidden">
-					<a href="/" className="db fl f5 lato no-underline green bg-animate hover-bg-green hover-white inline-flex items-center pa3 ba border-box mr4">
-						<svg className="w1" data-icon="chevronLeft" viewBox="0 0 32 32" fill="currentcolor">
-							<title>chevronLeft icon</title>
-							<path d="M20 1 L24 5 L14 16 L24 27 L20 31 L6 16 z"></path>
-						</svg>
-						<span className="pl1 f4">go back</span>
-					</a>
+
+					<Link href="/">
+						<a className="db fl f5 lato no-underline green bg-animate hover-bg-green hover-white inline-flex items-center pa3 ba border-box mr4">
+							<svg className="w1" data-icon="chevronLeft" viewBox="0 0 32 32" fill="currentcolor">
+								<title>chevronLeft icon</title>
+								<path d="M20 1 L24 5 L14 16 L24 27 L20 31 L6 16 z"></path>
+							</svg>
+							<span className="pl1 f4">go back</span>
+						</a>
+					</Link>
+
 					<div className="db fl pt3 lato lh-copy" dangerouslySetInnerHTML={{ __html: this.state.headerMessage }}></div>
 				</header>
 

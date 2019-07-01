@@ -13,6 +13,7 @@
     "publish": "git subtree push --prefix out origin master"
   },
   "dependencies": {
+    "iiif-gallery": "0.0.32",
     "next": "8.1.0",
     "react": "16.8.6",
     "react-dom": "16.8.6",

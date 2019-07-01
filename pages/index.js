@@ -3,6 +3,7 @@ import Head from '../components/head';
 import HomeSection from '../components/home-section';
 import Footer from '../components/footer';
 import { Component } from "react";
+import { defineCustomElements } from 'iiif-gallery/loader/';
 
 const breakpoint = 480;
 let lastWidth;
@@ -44,6 +45,17 @@ export default class Home extends Component {
                 }
             ]
         }
+
+        // prevent server-side compilation error
+		if (typeof window === 'undefined') {
+			return;
+		}
+
+        registerServiceWorker();
+
+        applyPolyfills().then(() => {
+            defineCustomElements(window);
+        });
     }
 
     alternatingCols() {
@@ -80,6 +92,10 @@ export default class Home extends Component {
                 }
             }
         });
+    }
+
+    componentWillMount() {
+
     }
 
     componentDidMount() {

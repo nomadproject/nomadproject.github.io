@@ -1,17 +1,20 @@
 import Carousel from './carousel';
 import Vimeo from './vimeo';
+import Link from 'next/link';
 
 function SectionLink(props) {
     if (props.link) {
         return (
             <p>
-                <a href={props.link} className="f5 no-underline green bg-animate hover-bg-green hover-white inline-flex items-center ph3 pv2 ba border-box">
-                    <span className="pr1 f4">{props.text}</span>
-                    <svg className="w1" data-icon="chevronRight" viewBox="0 0 32 32" fill="currentcolor">
-                        <title>chevronRight icon</title>
-                        <path d="M12 1 L26 16 L12 31 L8 27 L18 16 L8 5 z"></path>
-                    </svg>
-                </a>
+                <Link href={props.link}>
+                    <a className="f5 no-underline green bg-animate hover-bg-green hover-white inline-flex items-center ph3 pv2 ba border-box">
+                        <span className="pr1 f4">{props.text}</span>
+                        <svg className="w1" data-icon="chevronRight" viewBox="0 0 32 32" fill="currentcolor">
+                            <title>chevronRight icon</title>
+                            <path d="M12 1 L26 16 L12 31 L8 27 L18 16 L8 5 z"></path>
+                        </svg>
+                    </a>
+                </Link>
             </p>
         )
     }
