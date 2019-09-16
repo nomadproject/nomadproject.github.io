@@ -6,23 +6,28 @@ document.addEventListener('DOMContentLoaded', function() {
 
         var sound = marker.querySelector('a-sound');
 
-        sound.addEventListener('loaded', function(evt) {
-            
-            var soundComponent = evt.target.components.sound;
+        if (sound) {
 
-            setInterval(function() {
-                if (soundComponent.loaded) {
-                    if (marker.object3D.visible) {
-                        if (!soundComponent.isPlaying) {
-                            soundComponent.playSound();
-                        }                                
-                    } else {
-                        soundComponent.pauseSound();
-                    }
-                }
-            }, 500);
+            sound.addEventListener('loaded', function(evt) {
             
-        });                
+                var soundComponent = evt.target.components.sound;
+    
+                setInterval(function() {
+                    if (soundComponent.loaded) {
+                        if (marker.object3D.visible) {
+                            if (!soundComponent.isPlaying) {
+                                soundComponent.playSound();
+                            }                                
+                        } else {
+                            soundComponent.pauseSound();
+                        }
+                    }
+                }, 500);
+                
+            }); 
+
+        }
+                       
 
     });
 
