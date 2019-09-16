@@ -1,3 +1,9 @@
+# Generating markers
+
+Use https://codepen.io/staus/full/oEOJpq
+
+This must be on Full Page View, otherwise the markers aren't generated correctly!
+
 # Testing on localhost
 
     npm run build (ctrl + shift + b)
