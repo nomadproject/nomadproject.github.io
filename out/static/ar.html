@@ -13,23 +13,32 @@
     
     <meta charset="utf-8" />
     <meta name="apple-mobile-web-app-capable" content="yes">
-    <title>Augmented Reality Object Viewer</title>
-    <script src="https://aframe.io/releases/0.8.2/aframe.min.js"></script>
-    <script src="https://unpkg.com/ar.js@1.6.2/aframe/build/aframe-ar.min.js"></script>
+    <title>Nomad AR Postcards</title>
+    <script src="https://aframe.io/releases/0.9.2/aframe.min.js"></script>
+    <script src="https://unpkg.com/ar.js@1.7.1/aframe/build/aframe-ar.min.js"></script>
 </head>
 
 <body style="margin : 0px; overflow: hidden;">
-    <a-scene embedded arjs="sourceType: webcam; debugUIEnabled: false;">
+    <a-scene 
+        embedded 
+        vr-mode-ui="enabled: false"
+        renderer="logarithmicDepthBuffer: true; colorManagement: true;"
+        arjs="sourceType: webcam; debugUIEnabled: false;"
+        loading-screen="dotsColor: white; backgroundColor: black">
 
         <a-assets>
             <a-asset-item id="gourd" src="https://nomad-project.co.uk/objects/collection/gourd/_gourd/gourd.gltf"></a-asset-item>
-            <a-asset-item id="headrest" src="https://nomad-project.co.uk/objects/collection/headrest/_headrest/headrest.gltf"></a-asset-item>
+            <!-- <a-asset-item id="headrest" src="https://nomad-project.co.uk/objects/collection/headrest/_headrest/headrest.gltf"></a-asset-item>
             <a-asset-item id="incenseburner" src="https://nomad-project.co.uk/objects/collection/incense-burner/_incense-burner/incense-burner.gltf"></a-asset-item>
             <a-asset-item id="wooden-bowl" src="https://nomad-project.co.uk/objects/collection/wooden-bowl/_wooden-bowl/wooden-bowl.gltf"></a-asset-item>
+            <a-asset-item id="toy-lion" src="https://nomad-project.co.uk/objects/collection/toy-lion/_toy-lion/toy-lion.gltf"></a-asset-item>
+            <a-asset-item id="woven-milk-vessel" src="https://nomad-project.co.uk/objects/collection/woven-milk-vessel/_woven-milk-vessel/woven-milk-vessel.gltf"></a-asset-item> -->
             <a-asset-item id="gourd-sound" src="/static/mp3/gourd.mp3" response-type="arraybuffer" preload="auto"></a-asset-item>
-            <a-asset-item id="headrest-sound" src="/static/mp3/headrest.mp3" response-type="arraybuffer" preload="auto"></a-asset-item>
+            <!-- <a-asset-item id="headrest-sound" src="/static/mp3/headrest.mp3" response-type="arraybuffer" preload="auto"></a-asset-item>
             <a-asset-item id="incenseburner-sound" src="/static/mp3/incenseburner.mp3" response-type="arraybuffer" preload="auto"></a-asset-item>
             <a-asset-item id="wooden-bowl-sound" src="/static/mp3/wooden-bowl.mp3" response-type="arraybuffer" preload="auto"></a-asset-item>
+            <a-asset-item id="toy-lion-sound" src="/static/mp3/toy-lion.mp3" response-type="arraybuffer" preload="auto"></a-asset-item>
+            <a-asset-item id="woven-milk-vessel-sound" src="/static/mp3/woven-milk-vessel.mp3" response-type="arraybuffer" preload="auto"></a-asset-item> -->
         </a-assets>
 
         <a-marker type="pattern" url="custom-markers/gourd.patt">
@@ -37,7 +46,7 @@
             <a-entity position="0 2 0" scale=".2 .2 .2" gltf-model="#gourd"></a-entity>
         </a-marker>
 
-        <a-marker type="pattern" url="custom-markers/headrest.patt">
+        <!-- <a-marker type="pattern" url="custom-markers/headrest.patt">
             <a-sound src="#headrest-sound"></a-sound>
             <a-entity position="0 2 0" scale=".2 .2 .2" gltf-model="#headrest"></a-entity>
         </a-marker>
@@ -51,6 +60,16 @@
             <a-sound src="#wooden-bowl-sound"></a-sound>
             <a-entity position="0 2 0" scale=".2 .2 .2" gltf-model="#wooden-bowl"></a-entity>
         </a-marker>
+
+        <a-marker type="pattern" url="custom-markers/toy-lion.patt">
+            <a-sound src="#toy-lion-sound"></a-sound>
+            <a-entity position="0 2 0" scale=".2 .2 .2" gltf-model="#toy-lion"></a-entity>
+        </a-marker>
+
+        <a-marker type="pattern" url="custom-markers/woven-milk-vessel.patt">
+            <a-sound src="#woven-milk-vessel-sound"></a-sound>
+            <a-entity position="0 2 0" scale=".2 .2 .2" gltf-model="#woven-milk-vessel"></a-entity>
+        </a-marker> -->
 
         <a-entity camera></a-entity>
 
