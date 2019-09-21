@@ -39,40 +39,40 @@
             <a-asset-item id="wooden-bowl-sound" src="/static/mp3/wooden-bowl.mp3" response-type="arraybuffer" preload="auto"></a-asset-item>
             <a-asset-item id="toy-lion-sound" src="/static/mp3/toy-lion.mp3" response-type="arraybuffer" preload="auto"></a-asset-item>
             <a-asset-item id="woven-milk-vessel-sound" src="/static/mp3/woven-milk-vessel.mp3" response-type="arraybuffer" preload="auto"></a-asset-item>
-            <a-mixin
+            <!-- <a-mixin
                 id="rotating"
                 animation="property: rotation; from: '0 0 0'; to: '0 360 0'; dur: 10000; loop: true; easing: linear; autoplay: true;"
-                ></a-mixin>
+                ></a-mixin> -->
         </a-assets>
 
         <a-marker type="pattern" url="custom-markers/gourd.patt">
             <a-sound src="#gourd-sound"></a-sound>
-            <a-entity position="0 2 0" scale=".2 .2 .2" mixin="rotating" gltf-model="#gourd"></a-entity>
+            <a-entity position="0 2 0" scale=".2 .2 .2" gltf-model="#gourd"></a-entity>
         </a-marker>
 
         <a-marker type="pattern" url="custom-markers/headrest.patt">
             <a-sound src="#headrest-sound"></a-sound>
-            <a-entity position="0 2 0" scale=".2 .2 .2" mixin="rotating" gltf-model="#headrest"></a-entity>
+            <a-entity position="0 2 0" scale=".2 .2 .2" gltf-model="#headrest"></a-entity>
         </a-marker>
 
         <a-marker type="pattern" url="custom-markers/incenseburner.patt">
             <a-sound src="#incenseburner-sound"></a-sound>
-            <a-entity position="0 2 0" scale=".2 .2 .2" mixin="rotating" gltf-model="#incenseburner"></a-entity>
+            <a-entity position="0 2 0" scale=".2 .2 .2" gltf-model="#incenseburner"></a-entity>
         </a-marker>
 
         <a-marker type="pattern" url="custom-markers/wooden-bowl.patt">
             <a-sound src="#wooden-bowl-sound"></a-sound>
-            <a-entity position="0 2 0" scale=".2 .2 .2" mixin="rotating" gltf-model="#wooden-bowl"></a-entity>
+            <a-entity position="0 2 0" scale=".2 .2 .2" gltf-model="#wooden-bowl"></a-entity>
         </a-marker>
 
         <a-marker type="pattern" url="custom-markers/toy-lion.patt">
             <a-sound src="#toy-lion-sound"></a-sound>
-            <a-entity position="0 2 0" scale="27 27 27" mixin="rotating" gltf-model="#toy-lion"></a-entity>
+            <a-entity position="0 2 0" scale="27 27 27" gltf-model="#toy-lion"></a-entity>
         </a-marker>
 
         <a-marker type="pattern" url="custom-markers/woven-milk-vessel.patt">
             <a-sound src="#woven-milk-vessel-sound"></a-sound>
-            <a-entity position="0 2 0" scale=".1 .1 .1" mixin="rotating" gltf-model="#woven-milk-vessel"></a-entity>
+            <a-entity position="0 2 0" scale=".1 .1 .1" gltf-model="#woven-milk-vessel"></a-entity>
         </a-marker>
 
         <a-entity camera></a-entity>
