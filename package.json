@@ -13,7 +13,7 @@
     "publish": "git subtree push --prefix out origin master"
   },
   "dependencies": {
-    "next": "^7.0.2",
+    "next": "^13.0.2",
     "react": "^16.5.2",
     "react-dom": "^16.5.2",
     "universalviewer": "3.0.33"
